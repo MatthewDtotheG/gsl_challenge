@@ -39,11 +39,33 @@ input{
   font-size: 16px;
 }
 
-.LoanContainer div {
+.visible {
   display: block;
 }
 
-.button {
+.notvisible{
+  display: none;
+}
+
+.LoanContainer {
+  width: 70%;
+  margin-bottom: 80px;
+  margin-left: 15%;
+}
+
+.LoanContainer div {
+  display: block;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.LoanContainer label{
+  margin-right: 30px;
+  text-align: left;
+  float: left;
+}
+
+.button, button {
   background-color: #1C71FB;
   font-size: 16px;
   height: 40px;
@@ -53,7 +75,7 @@ input{
   display: inline-block;
 }
 
-.button:hover {
+.button:hover, button:hover {
   transition: 0.5s;
   cursor: pointer;
   background-color: white;
