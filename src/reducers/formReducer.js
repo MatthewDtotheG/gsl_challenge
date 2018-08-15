@@ -1,7 +1,7 @@
 import { ADD_INFO } from '../actions/types'
 
 const initialState = {
-  info: []
+  load_data: []
 };
 
 export default function(state = initialState, action){
@@ -10,7 +10,7 @@ export default function(state = initialState, action){
     case ADD_INFO:
       return {
         ...state,
-        info: [action.payload, ...state.info]
+        data: [action.payload, ...state.data]
       }
     default:
       return state;

@@ -11,37 +11,42 @@ class MainForm extends Component {
     rate: '',
     noi: '',
     address: {
-               street: '',
-               city  : '',
-               state : '',
-               county: '',
-               zip   : ''
+      street: '',
+      city  : '',
+      state : '',
+      county: '',
+      zip   : ''
     }
 };
 
 
 onSubmit = (e) => {
   e.preventDefault();
+  let {income, expenses, address} = this.state
+  const noiCalc = income - expenses
+  const rateCalc = parseFloat((income - expenses) / income)
+
   const data = {
-    income: this.state.income,
-    expenses: this.state.expenses,
-    rate: this.state.rate,
-    noi: this.state.income,
+    income: income,
+    expenses: expenses,
+    rate: rateCalc,
+    noi: noiCalc,
     address: {
-      street: this.state.street,
-      city  : this.state.city,
-      state : this.state.state,
-      county: this.state.county,
-      zip   : this.state.zip
+      street: address.street,
+      city  : address.city,
+      state : address.state,
+      county: address.county,
+      zip   : address.zip
     }
   }
-  console.log(this.state)
+
   this.props.addInfo(data);
 }
 
-onChange = (e) => {
+onAddressChange = (e) => {
   const newAddress = { ...this.state.address, [e.target.name]: e.target.value};
   this.setState({ address: newAddress });
+
 };
 
 onCalcChange = (e) => {
@@ -51,86 +56,68 @@ onCalcChange = (e) => {
 
   render() {
     return (
-      <div>
+      <div className='Container'>
       <h1>Greystone Labs</h1>
 
       <form onSubmit={this.onSubmit}>
-      <label>income</label>
-      <input
-        type='text'
-        name='income'
-        onChange={this.onCalcChange}
-        value={this.state.income}
-      />
+        <label>Income</label>
+          <input
+          type='text'
+          name='income'
+          onChange={this.onCalcChange}
+          value={this.state.income}
+          />
 
 
-      <label>expenses</label>
-      <input
-        type='text'
-        name='expenses'
-        onChange={this.onCalcChange}
-        value={this.state.expenses}
-      />
+          <label>Expenses</label>
+          <input
+          type='text'
+          name='expenses'
+          onChange={this.onCalcChange}
+          value={this.state.expenses}
+          />
 
-
-      <label>rate</label>
-      <input
-        type='text'
-        name='rate'
-        onChange={this.onCalcChange}
-        value={this.state.rate}
-      />
-      <label>noi</label>
-      <input
-        type='text'
-        name='noi'
-        onChange={this.onCalcChange}
-        value={this.state.noi}
-      />
-
-        <label>street</label>
-        <input
+          <label>Street</label>
+          <input
           type='text'
           name='street'
-          onChange={this.onChange}
+          onChange={this.onAddressChange}
           value={this.state.street}
-        />
+          />
 
-        <label>City</label>
-        <input
-        type='text'
-        name='city'
-        onChange={this.onChange}
-        value={this.state.city}
-        />
+          <label>City</label>
+          <input
+          type='text'
+          name='city'
+          onChange={this.onAddressChange}
+          value={this.state.city}
+          />
 
-        <label>State</label>
-        <input
-        type='text'
-        name='state'
-        onChange={this.onChange}
-        value={this.state.state}
-        />
+          <label>State</label>
+          <input
+          type='text'
+          name='state'
+          onChange={this.onAddressChange}
+          value={this.state.state}
+          />
 
-        <label>County</label>
+          <label>County</label>
+          <input
+          type='county'
+          name='county'
+          onChange={this.onAddressChange}
+          value={this.state.county}
+          />
 
-        <input
-        type='county'
-        name='county'
-        onChange={this.onChange}
-        value={this.state.county}
-        />
+          <label>Zip</label>
+          <input
+          type='zip'
+          name='zip'
+          onChange={this.onAddressChange}
+          value={this.state.zip}
+          />
 
-        <label>Zip</label>
-
-        <input
-        type='zip'
-        name='zip'
-        onChange={this.onChange}
-        value={this.state.zip}
-        />
-
-        <button type='submit' value='submit'>Submit</button>
+        <input className='button' type="submit" value="Submit" />
       </form>
     </div>
     );
