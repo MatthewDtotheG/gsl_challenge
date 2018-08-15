@@ -23,6 +23,10 @@
   margin: 40px;
 }
 
+h1 {
+  margin-bottom: 50px;
+}
+
 form {
   width: 70%;
   margin: auto;
@@ -31,15 +35,15 @@ form {
 
 input{
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  font-size: 16px;
 }
 
 .button {
-  margin-top: 20px;
   background-color: #1C71FB;
   font-size: 16px;
   height: 40px;
-  width: 153px;
+  width: 173px;
   color: white;
   border-radius: 5px;
   display: inline-block;
