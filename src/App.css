@@ -39,6 +39,10 @@ input{
   font-size: 16px;
 }
 
+.LoanContainer div {
+  display: block;
+}
+
 .button {
   background-color: #1C71FB;
   font-size: 16px;

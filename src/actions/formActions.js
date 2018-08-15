@@ -1,7 +1,6 @@
 export const ADD_INFO = "ADD_INFO"
 
 export const addInfo = (data) => dispatch => {
-console.log(data)
 fetch(`https://script.google.com/macros/s/AKfycbwPGz6uQQS9IW33ASPYlcWaEtRMD8eDAK1ONg7lT2dREXpaSUYh/exec`, {
        method: "POST",
        headers: {
