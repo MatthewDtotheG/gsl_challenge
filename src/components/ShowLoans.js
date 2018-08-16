@@ -20,6 +20,7 @@ loanDisplay = () => {
     if(this.props.loans){
         return this.props.loans.map((loanInfo, index) => (
           <div id={index} className= { index < 3 || this.state.active ? "LoanContainer" : "hiddenLoans" }>
+            <h2>Loan number {index + 1}</h2>
             <label>75% LTV Proceeds</label>
             <br/>
             <div>{loanInfo['75% LTV Proceeds']}</div>
@@ -59,6 +60,7 @@ loanDisplay = () => {
             <label>Years</label>
             <br/>
             <div>{loanInfo.Years}</div>
+            <hr/>
           </div>
         ))
       }

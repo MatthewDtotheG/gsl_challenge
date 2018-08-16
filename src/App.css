@@ -28,8 +28,9 @@
   margin: 40px;
 }
 
-h1 {
+.Container h1 {
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 form {
@@ -46,7 +47,7 @@ input{
 
 .LoanContainer, .hiddenLoans {
   width: 70%;
-  margin-bottom: 80px;
+  margin-bottom: 30px;
   margin-left: 15%;
 }
 
