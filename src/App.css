@@ -14,6 +14,11 @@
   color: white;
 }
 
+.notVisible {
+  display: none;
+}
+
+
 .App-title {
   font-size: 1.5em;
 }
@@ -39,18 +44,14 @@ input{
   font-size: 16px;
 }
 
-.visible {
-  display: block;
-}
-
-.notvisible{
-  display: none;
-}
-
-.LoanContainer {
+.LoanContainer, .hiddenLoans {
   width: 70%;
   margin-bottom: 80px;
   margin-left: 15%;
+}
+
+.hiddenLoans {
+  display: none;
 }
 
 .LoanContainer div {

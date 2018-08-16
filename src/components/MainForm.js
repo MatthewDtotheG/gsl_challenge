@@ -26,7 +26,7 @@ onSubmit = (e) => {
   const {income, expenses, address} = this.state
   const noiCalc = income - expenses
   const rateCalc = parseFloat((income - expenses) / income)
-
+  
   const data = {
     income: income,
     expenses: expenses,
